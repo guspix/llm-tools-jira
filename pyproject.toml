@@ -1,0 +1,32 @@
+[project]
+name = "llm-tools-jira"
+version = "0.1"
+description = "Manage Jira issues using LLMs"
+readme = "README.md"
+authors = [{ name = "Gustavo Aguilera" }]
+license = "Apache-2.0"
+classifiers = []
+requires-python = ">=3.10"
+dependencies = [
+    "jira",
+    "llm>=0.26",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv.sources]
+jira = { url = "https://github.com/pycontribs/jira/releases/download/3.10.1/jira-3.10.1-py3-none-any.whl" }
+
+[project.urls]
+Homepage = "https://github.com/guspix/llm-tools-jira"
+Changelog = "https://github.com/guspix/llm-tools-jira/releases"
+Issues = "https://github.com/guspix/llm-tools-jira/issues"
+CI = "https://github.com/guspix/llm-tools-jira/actions"
+
+[project.entry-points.llm]
+llm_tools_jira = "llm_tools_jira"
+
+[project.optional-dependencies]
+test = ["pytest", "llm-echo>=0.3a1"]
